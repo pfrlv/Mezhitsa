@@ -1,0 +1,103 @@
+#rules-modal {
+  position: absolute;
+  opacity: 0;
+  transition: opacity .2s ease;
+  z-index: 9;
+}
+// .show-rules-modal
+// body class for showing modal window
+.show-rules-modal #rules-modal {
+  opacity: 1;
+}
+.rules-modal-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  background-color: fade(#fff, 80%);
+}
+.rules-modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  margin: auto;
+}
+.rules-modal-table {
+  display: table;
+  margin: auto;
+  width: 85%;
+  max-width: 960px;
+  min-width: 758px;
+  height: 100%;
+
+  @media @phone {
+    width: 100%;
+    min-width: 320px;
+  }
+}
+.rules-modal-cell {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px;
+}
+.rules-modal-content {
+  position: relative;
+  border: 1px solid #bfbfbf;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px fade(#bfbfbf, 20%);
+  border-radius: 1px;
+  font-size: 0;
+}
+.rules-modal-close {
+  .spriter(@modal-close);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.rules-modal-unit {
+  display: inline-block;
+  vertical-align: top;
+  width: 43.75%;
+  margin: 3.125%;
+  font-size: 0.8125rem;
+
+  @media @phone {
+    display: block;
+    width: auto;
+    margin: 15px 20px 30px;
+
+    &:last-of-type {
+      margin-bottom: 15px;
+    }
+  }
+}
+.rules-modal-title {
+  margin: 0;
+  font-size: 2.0625rem;
+  font-weight: normal;
+}
+.rules-modal-p {
+  margin: 0;
+}
+.red-mark {
+  color: @red;
+  text-decoration: underline;
+}
+mark {
+  background: #fdf0a8;
+  outline: 5px solid #fdf0a8;
+  // fix white border round text
+  box-shadow: 0 0 0 5px #fdf0a8;
+
+  span {
+    // fix text overflow by outline
+    position: relative;
+  }
+}

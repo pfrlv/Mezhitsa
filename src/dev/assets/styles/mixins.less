@@ -1,0 +1,35 @@
+// Mixin for sprites
+// 
+// @spriteVals - variable with needed image, under mixin code
+.spriter( @spriteVals ) {
+  
+  display: inline-block;
+  vertical-align: middle; // vertical centering relative to text
+
+  width: extract( @spriteVals, 1 );
+  height: extract( @spriteVals, 2 );
+  background-repeat: no-repeat;
+  background-image: e(%('url(%s)', extract( @spriteVals, 3 ) ) );
+  background-position: extract( @spriteVals, 4 ) extract( @spriteVals, 5 );
+  background-size: 59px auto;
+}
+// .spriter mixin's variables 
+@spriter-path: '../images/spriter.png';
+@email: 22px 22px @spriter-path -24px -24px;
+@copyleft: 22px 22px @spriter-path -1px -24px;
+@rules: 22px 22px @spriter-path -1px -1px;
+@modal-close: 22px 22px @spriter-path -24px -1px;
+@add-to-home: 11px 15px @spriter-path -47px -1px;
+
+.clearfix() {
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+  &:before {
+    content: " ";
+    display: table;
+  }
+  *zoom: 1;
+}
