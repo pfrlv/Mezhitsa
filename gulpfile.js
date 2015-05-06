@@ -88,7 +88,7 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
   return gulp.src(path.dev.scripts)
     .pipe(concat('main.min.js'))
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest(path.build.scripts))
 });
 
