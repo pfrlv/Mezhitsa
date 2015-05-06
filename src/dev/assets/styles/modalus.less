@@ -61,11 +61,15 @@
   font-size: 0;
 }
 .rules-modal-close {
-  .spriter(@modal-close);
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
+}
+.rules-modal-close {
+  a {
+    .spriter(@modal-close);
+  }
 }
 .rules-modal-unit {
   display: inline-block;

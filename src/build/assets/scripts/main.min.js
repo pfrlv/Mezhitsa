@@ -14,9 +14,10 @@ var Modalus = (function() {
 
   $modalContainer.style.display = 'none';
 
-  $openBtn.addEventListener('click', function( even ) {
-    even.preventDefault();
-
+  // Открыть Модалус
+  function openModalus( event ) {
+    event.preventDefault();
+    
     if ( !hasclass($body, 'show-rules-modal') ) {
       $modalContainer.style.display = 'block';
 
@@ -24,35 +25,40 @@ var Modalus = (function() {
         $body.classList.add('show-rules-modal');
       }, 1);
     }
+  };
+
+  // Закрыть Модалус
+  function closeModalus( event ) {
+    event.preventDefault();
+
+    $body.removeAttribute('class');
+
+    setTimeout(function() {
+      $modalContainer.style.display = 'none';
+    }, 200);
+  };
+
+  // Открыввет окно по клику
+  $openBtn.addEventListener('click', function( event ) {
+    openModalus( event );
   }, false);
 
+  // Закрывает окно по клику на крестик
+  $closeBtn.addEventListener('click', function( event ) {
+    closeModalus( event );
+  }, false);
+
+  // Открывает окно при нажатии shift + ?
   window.addEventListener('keyup', function( event ) { 
     if ( event.shiftKey && event.keyCode === 191 ) {
-      $modalContainer.style.display = 'block';
-
-      setTimeout(function() {
-        $body.classList.add('show-rules-modal');
-      }, 1);
+      openModalus( event );
     }
-  }, false); 
-
-  $modalContainer.addEventListener('click', function( event ) {
-    if ( hasclass(event.target, defaults.modalCloseBtn) ) {
-        $body.removeAttribute('class');
-
-        setTimeout(function() {
-          $modalContainer.style.display = 'none';
-        }, 200);
-      }
   }, false);
 
+  // Закрыввает окно при нажатии на esc
   window.addEventListener('keyup', function( event ) { 
     if( event.keyCode === 27 ) {
-      $body.removeAttribute('class');
-
-      setTimeout(function() {
-        $modalContainer.style.display = 'none';
-      }, 200);
+      closeModalus( event )
     } 
   }, false);
 
