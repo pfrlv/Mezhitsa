@@ -22,7 +22,7 @@
   right: 0;
   bottom: 0;
   background-color: #fff;
-  background-color: fade(#fff, 80%);
+  background-color: fade(#fff, 98%);
 }
 .rules-modal-container {
   position: fixed;
@@ -37,9 +37,8 @@
 .rules-modal-table {
   display: table;
   margin: auto;
-  width: 85%;
   max-width: 960px;
-  min-width: 758px;
+  min-width: 768px;
   height: 100%;
 
   @media @phone {
@@ -50,20 +49,16 @@
 .rules-modal-cell {
   display: table-cell;
   vertical-align: middle;
-  padding: 10px;
 }
 .rules-modal-content {
   position: relative;
-  border: 1px solid #bfbfbf;
-  background-color: #fff;
-  box-shadow: 0 0 0 3px fade(#bfbfbf, 20%);
-  border-radius: 1px;
+  padding: (@line/2);
   font-size: 0;
 }
 .rules-modal-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: (@line/2);
+  right: (@line/2);
   cursor: pointer;
 }
 .rules-modal-close {
@@ -74,27 +69,31 @@
 .rules-modal-unit {
   display: inline-block;
   vertical-align: top;
-  width: 43.75%;
-  margin: 3.125%;
-  font-size: 0.8125rem;
+  width: 45.5319148936%;
+  margin: @line*2 (@line/2);
 
   @media @phone {
     display: block;
     width: auto;
-    margin: 15px 20px 30px;
+
+    &:first-of-type {
+      margin-top: (@line/2);
+    }
 
     &:last-of-type {
-      margin-bottom: 15px;
+      margin-bottom: (@line/2);
     }
   }
 }
 .rules-modal-title {
   margin: 0;
-  font-size: 2.0625rem;
-  font-weight: normal;
+  .font-size(33px);
+  font-weight: bold;
+  line-height: 1.2727272727;
 }
 .rules-modal-p {
   margin: 0;
+  font-size: unit(@base-font-size, px);
 }
 .red-mark {
   color: @red;

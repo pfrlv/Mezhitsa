@@ -1,28 +1,22 @@
-html,
-body {
-  font-size: 1rem;
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: unit(@base-font-size, px);
+  line-height: @line-height;
 }
 body {
-  min-width: 768px;
   margin: auto;
-  font-family: Tahoma, Arial, sans-serif;
   cursor: default;
+  min-width: 768px;
 
   @media @phone {
-    min-width: 0;
+    min-width: 320px;
   }
 }
 
 #page {
-  width: 85%;
-  max-width: 1366px;
+  max-width: 960px;
+  padding: 0 (@line/2);
   margin: auto;
-
-  @media @phone {
-    // .main-table-unit @margin = 1.0416666666%
-    // 100 - 1.0416666666% * 4
-    width: 95.8333333336%;
-  }
 }
 
 .hp { margin-left: -.44em; }
@@ -34,7 +28,7 @@ body {
 .rules-icon { .spriter(@rules); }
 .download-icon {
   .spriter(@add-to-home);
-  vertical-align: top;
+  vertical-align: baseline;
 }
 .copyright-icon { .spriter(@copyleft); }
 .email-icon { .spriter(@email); }
@@ -51,76 +45,82 @@ body {
 }
 
 .header-container {
-  padding-bottom: 2.5rem;
+  padding-bottom: @line;
+  margin-bottom: 0.66666666666666663rem;
 }
 
 .logotype {
-  padding-top: 80px;
-  padding-bottom: 40px;
+  padding-top:@line*2;
+  padding-bottom: @line*3;
   text-align: center;
+
+  @media @phone {
+    padding-top: @line*3;
+    padding-bottom: @line*2;
+  }
 
   h1 {
     margin: 0;
-    margin-bottom: 7px;
-    font-size: 2rem;
-    line-height: 1;
+    .font-size(46px);
+    letter-spacing: 1.55px;
     text-transform: uppercase;
   }
 
   h2 {
+    .font-size(17px);
     margin: 0;
-    font-size: 1.125rem;
     line-height: 1;
     font-weight: normal;
-
-    @media @phone {
-      max-width: 260px;
-      margin: auto;
-    }
   }
 }
 
 .rules-link {
-  top: 20px;
+  top: (@line*2);
   right: 0;
+  margin-top: 10px;
   position: absolute;
 
   @media @phone {
     left: 0;
     right: auto;
+    top: (@line/2);
+    margin-top: 0;
   }
 
   a {
-    color: @blue;
-    font-size: 0.8125rem;
     text-decoration: none;
 
+    span {
+      color: @blue;
+    }
+
     &:hover {
-      text-decoration: underline;
+      span {
+        text-decoration: underline;
+      }
     }
   }
 }
 
 .download {
-  max-width: 454px;
+  max-width: 500px;
   margin: auto;
-
-  @media @phone {
-    width: 86%;
-  }
 
   p {
     margin: 0;
     text-align: left;
-    font-size: 0.8125rem;
   }
 
   a {
     text-decoration: none;
-    color: @blue;
 
+    span {
+      color: @blue;
+    }
     &:hover {
-      text-decoration: underline;
+      span {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -133,7 +133,7 @@ body {
 // end #header
 
 #main-table {
-  margin-bottom: -1.6875rem;
+  margin-bottom: -2.133333333333333304rem;
 }
 .main-table-container {
   margin-left: -0.5208333333%;
@@ -146,19 +146,14 @@ body {
   }
 }
 .main-table-unit {
+  font-size: unit(@base-font-size, px);
   position: relative;
   width: 13.2440476194%;
   padding-bottom: 13.2440476194%;
   box-shadow: 0 0 0 1px @light-red;
-  border-radius: 2px;
+  border-radius: 1px;
   display: inline-block;
-  margin: 0 0.5208333333% 1.6875rem;
-  font-size: 1rem;
-
-  @media (max-width: 959px) {
-    width: 15.6250000004%;
-    padding-bottom: 15.6250000004%;
-  }
+  margin: 0 0.5208333333% 2.133333333333333304rem;
 
   @media @phone {
     width: 31.2499999998%;
@@ -169,10 +164,6 @@ body {
 }
 .main-table-unit-long {
   width: 27.5297619056%;
-  
-  @media (max-width: 959px) {
-    width: 32.2916666676%;
-  }
 
   @media @phone {
     width: 64.5833333332%;
@@ -194,14 +185,14 @@ body {
 }
 .letter-rus {
   color: @red;
-  font-size: 1.3125rem;
+  .font-size(21px);
   line-height: 33px;
 }
 .letter-eng {
   position: absolute;
-  font-size: 4.1875rem;
   top: 50%;
   left: 50%;
+  .font-size(67px);
   transform: translate(-50%, -50%);
 }
 // end #main-table
@@ -209,41 +200,36 @@ body {
 #footer {
   .clearfix();
 
-  padding-top: 5rem;
-  padding-bottom: 2.5rem;
-
-  @media @phone {
-    padding-top: 2.5rem;
-    // text-align: center;
-  }
+  padding-top: @line*4;
+  padding-bottom: @line*2;
 }
 .copyright {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 20px;
-  font-size: 0.8125rem;
+  margin-right: 21px;
 }
 .email {
   display: inline-block;
   vertical-align: middle;
 }
 .email-title {
-  font-size: 0.8125rem;
-
   a {
-    color: @blue;
     text-decoration: none;
 
+    span {
+      color: @blue;
+    }
+
     &:hover {
-      text-decoration: underline;
+      span {
+        text-decoration: underline;
+      }
     }
   }
 }
 .shortkey {
   float: right;
-  font-size: 0.625rem;
-  line-height: 1.5;
-  color: darken(white, 40%);
+  .font-size(11px);
 
   @media @phone {
     display: none;

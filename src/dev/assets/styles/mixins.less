@@ -33,3 +33,10 @@
   }
   *zoom: 1;
 }
+
+// 
+
+.font-size(@value) {
+  font-size: unit(@value, px); 
+  font-size: unit(@value/@base-font-size, rem);
+}

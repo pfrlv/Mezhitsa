@@ -54,7 +54,13 @@ gulp.task('copy:images', function() {
 
 // Copy other files
 gulp.task('copy:misc', function() {
-  return gulp.src('src/dev/**/**/*.{txt,ico,pdf}')
+  return gulp.src('src/dev/**/**/*.{txt, pdf}')
+    .pipe(gulp.dest(path.build.root))
+});
+
+// Copy CNAME file
+gulp.task('copy:cname', function() {
+  return gulp.src('src/dev/CNAME')
     .pipe(gulp.dest(path.build.root))
 })
 
