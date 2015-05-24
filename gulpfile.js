@@ -54,7 +54,7 @@ gulp.task('copy:images', function() {
 
 // Copy other files
 gulp.task('copy:misc', function() {
-  return gulp.src('src/dev/**/**/*.{txt, pdf}')
+  return gulp.src('src/dev/**/**/*.{pdf, txt}')
     .pipe(gulp.dest(path.build.root))
 });
 

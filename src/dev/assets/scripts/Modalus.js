@@ -23,7 +23,7 @@ var Modalus = (function() {
 
       setTimeout(function() {
         $body.classList.add('show-rules-modal');
-      }, 1);
+      }, 10); // для задержки показа при клике
     }
   };
 

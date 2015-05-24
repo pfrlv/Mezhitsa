@@ -1,14 +1,15 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
+Mezhitsa (межица) — таблица звуковой транслитерации кириллического алфавита с наименьшим отсуплением от фонетических и эстетических норм
 
-# TEAM
+# Спроектировали
+Павел Фролов
+эл. почта: pavlodmitrovich@ya.ru
+твиттер: @pfrlv
 
-  <name> -- <role> -- <twitter>
+Булкина Кристина
+эл. почта: kristina.bulkina@gmail.com
 
-# THANKS
+# Использовали
+Vanilla.js <http://vanilla-js.com>, HTML5, CSS3, Sketch, Sublime Text
 
-  <name>
-
-# TECHNOLOGY COLOPHON
-
-  HTML5, CSS3
+# Последнее обновление
+24.04.15

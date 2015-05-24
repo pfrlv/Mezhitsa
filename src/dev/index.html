@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Mezhitsa</title>
-  <meta name="description" content="Mezhitsa — таблица звуковой транслитерации кириллического алфавита с наименьшим отсуплением от фонетических и эстетических норм">
+  <meta name="description" content="Mezhitsa (межица) — таблица звуковой транслитерации кириллического алфавита с наименьшим отсуплением от фонетических и эстетических норм">
+  
+  <!-- HUMANS.TXT -->
+  <link rel="author" href="humans.txt">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- TOUCH ICONS -->
@@ -12,13 +16,18 @@
   <link rel="apple-touch-icon" sizes="120x120" href="assets/images/apple-touch-icon-120x120.png">
   <link rel="apple-touch-icon" sizes="152x152" href="assets/images/apple-touch-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon-180x180.png">
-  <link rel="icon" sizes="192x192" href="assets/images/touch-icon-192x192.png">
+  <link rel="icon" sizes="192x192" href="assets/images/apple-touch-icon-192x192.png">
 
   <!-- FAVICONS -->
   <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/styles/main.min.css">
+  
+  <script src="http://yastatic.net/jquery/2.1.3/jquery.min.js"></script>
+
+  <!-- Remove .no-js class if javascript turn on -->
   <script>
     document.documentElement.removeAttribute('class');
   </script>
@@ -83,7 +92,7 @@
                     <article class="rules-modal-unit rules-modal-unit-no-margin">
                       <p class="rules-modal-p">
                         <mark>
-                          <span>Таблицу и&nbsp;правила можно использовать в&nbsp;личных целях или принять её&nbsp;в&nbsp;качестве стандарта в&nbsp;своей рабочей группе.</span>
+                          <span>Таблицу и&nbsp;правила можно использовать в&nbsp;личных целях или принять их&nbsp;в&nbsp;качестве стандарта в&nbsp;своей рабочей группе.</span>
                         </mark>
                       </p>
                     </article>
@@ -94,7 +103,7 @@
           </div>
         </div>
         <div class="download">
-          <p>Чтобы быстро открыть таблицу<span style="margin-right:-0.2em;">,</span><span style="margin-left:0.2em;"> </span>сохраните её&nbsp;на&nbsp;экране<span style="margin-right:0.44em;"> </span><span style="margin-left:-0.44em;">&laquo;</span>Домой&raquo; с&nbsp;помощью кнопки <i class="download-icon"></i> в&nbsp;Айфоне или загрузите <a href="assets/MEZHITSA.pdf"><nobr><span>PDF-версию</span></nobr></a><span class="pmaa blue">.</span></p>
+          <p>Чтобы быстро открыть таблицу<span style="margin-right:-0.2em;">,</span><span style="margin-left:0.2em;"> </span>сохраните её&nbsp;на&nbsp;экране<span style="margin-right:0.44em;"> </span><span style="margin-left:-0.44em;">&laquo;</span>Домой&raquo; с&nbsp;помощью кнопки <i class="download-icon"></i> в&nbsp;Айфоне или&nbsp;<a href="assets/downloads/MEZHITSA.pdf"><span>загрузите PDF</span></a><span class="pmaa blue">.</span></p>
         </div>
       </div>
     </header>
@@ -308,11 +317,12 @@
         </span>
       </div>
       <div class="shortkey">
-        Shift + ? &mdash; открыть правила
-        <br> Esc &mdash; закрыть правила
+        <span><b>Shift</b> + <b>?</b> &mdash; открыть правила, <b>Esc</b> &mdash; закрыть правила</span>
       </div>
     </footer>
   </div>
+
+  <!-- JS -->
   <script type="text/javascript" src="assets/scripts/main.min.js"></script>
 </body>
 </html>
