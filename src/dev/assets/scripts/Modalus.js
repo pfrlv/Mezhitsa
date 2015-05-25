@@ -12,7 +12,7 @@ var Modalus = (function() {
       $modalContainer = document.querySelector( '#' + defaults.modalContainer ),
       $body = document.body;
 
-  $modalContainer.style.display = 'none';
+      $modalContainer.style.display = 'none';
 
   // Открыть Модалус
   function openModalus( event ) {
@@ -20,10 +20,7 @@ var Modalus = (function() {
     
     if ( !hasclass($body, 'show-rules-modal') ) {
       $modalContainer.style.display = 'block';
-
-      setTimeout(function() {
-        $body.classList.add('show-rules-modal');
-      }, 10); // для задержки показа при клике
+      setTimeout( function() { $body.classList.add('show-rules-modal') }, 25 );
     }
   };
 
@@ -32,10 +29,7 @@ var Modalus = (function() {
     event.preventDefault();
 
     $body.removeAttribute('class');
-
-    setTimeout(function() {
-      $modalContainer.style.display = 'none';
-    }, 200);
+    setTimeout( function() { $modalContainer.style.display = 'none' }, 201 );
   };
 
   // Открыввет окно по клику

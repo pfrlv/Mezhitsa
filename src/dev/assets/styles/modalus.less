@@ -1,9 +1,11 @@
 #rules-modal {
-  position: absolute;
+  position: fixed;
   opacity: 0;
   transition: opacity .2s ease;
-  z-index: 9;
+  top: 0; right: 0; left: 0; bottom: 0;
+  z-index: 99;
 }
+
 // .show-rules-modal
 // body class for showing modal window
 .show-rules-modal #rules-modal {
