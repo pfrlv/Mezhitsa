@@ -5,7 +5,7 @@
 
   display: inline-block;
   vertical-align: middle;
-  background-size: 63px;
+  background-size: 27px;
 
   width: extract( @spriteVals, 1 );
   height: extract( @spriteVals, 2 );
@@ -15,13 +15,8 @@
 }
 @spriter-path: '../images/spriter.png';
 
-@add-to-home: 11px 15px @spriter-path -50px -1px;
-@email: 22px 22px @spriter-path -26px -26px;
-@copyleft: 22px 22px @spriter-path -2px -26px;
-@rules: 22px 22px @spriter-path -2px -2px;
-@modal-close: 22px 22px @spriter-path -26px -2px;
-
-
+@mezhitsa: 25px 25px @spriter-path -1px -17px;
+@add-to-home: 11px 15.000000000000009px @spriter-path -1px -0.9999999999999966px;
 
 
 
@@ -38,7 +33,6 @@
   *zoom: 1;
 }
 
-// 
 
 .font-size(@value) {
   font-size: unit(@value, px); 
