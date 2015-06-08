@@ -2,7 +2,7 @@ Mezhitsa (межица) — таблица звуковой транслитер
 
 # Спроектировали
 Павел Фролов
-эл. почта: pavlodmitrovich@ya.ru
+эл. почта: pfrlv@mail.ru
 твиттер: @pfrlv
 
 Булкина Кристина
@@ -13,3 +13,4 @@ Vanilla.js <http://vanilla-js.com>, HTML5, CSS3, Sketch, Sublime Text
 
 # Последнее обновление
 24.04.15
+08.06.15

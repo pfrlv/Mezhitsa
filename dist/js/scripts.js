@@ -1,0 +1,1 @@
+if("createTouch"in document)try{for(var ignore=/:hover/,i=0;i<document.styleSheets.length;i++)for(var sheet=document.styleSheets[i],j=sheet.cssRules.length-1;j>=0;j--){var rule=sheet.cssRules[j];rule.type===CSSRule.STYLE_RULE&&ignore.test(rule.selectorText)&&sheet.deleteRule(j)}}catch(e){}

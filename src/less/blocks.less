@@ -15,8 +15,12 @@ body {
 
 #page {
   max-width: 1024px;
-  padding: 0 (@line/2);
+  padding: 0 @line;
   margin: auto;
+
+  @media @phone {
+    padding: 0 (@line/2);
+  }
 }
 
 // Icons from .spriter mixin
