@@ -1,0 +1,61 @@
+// Micro clearfix
+// by Nicolas Gallagher
+// http://nicolasgallagher.com/micro-clearfix-hack/
+//
+// Compatible in Firefox 3.5+, Safari 4+, Chrome, Opera 9+, IE 6+
+.clearfix() {
+  *zoom: 1;
+  margin: auto;
+
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Mixin for sprites
+//
+// @spriteVals - variable with needed image, under mixin code
+.spriter( @spriteVals ) {
+
+  display: inline-block;
+  vertical-align: middle;
+  background-size: 27px;
+
+  width: extract( @spriteVals, 1 );
+  height: extract( @spriteVals, 2 );
+  background-repeat: no-repeat;
+  background-image: e(%('url(%s)', extract( @spriteVals, 3 ) ) );
+  background-position: extract( @spriteVals, 4 ) extract( @spriteVals, 5 );
+}
+@spriter-path: '../img/spriter.png';
+
+@mezhitsa: 25px 25px @spriter-path -1px -17px;
+@add-to-home: 11px 15.000000000000009px @spriter-path -1px -0.9999999999999966px;
+
+// Media queries mixin
+//
+// @cols - columns for breakpoints
+// @rules - your rules fot these breakpoints
+//
+// .vpwidth(@md-8cols, {
+//   float: left;
+//   width: @6cols;
+//   margin: auto @halfgap;
+// });
+.vpwidth( @cols, @rules ) {
+  @media only screen and (max-width: @cols) {
+    @rules();
+  }
+}
+.vpwidth-touch( @rules ) {
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 120dpi) {
+    @rules();
+  }
+}
+

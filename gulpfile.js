@@ -5,6 +5,8 @@ var rename = require('gulp-rename');
 var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
 var csso = require('gulp-csso');
+var postcss = require('gulp-postcss');
+var lost = require('lost');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var browsersync = require('browser-sync');
@@ -14,7 +16,7 @@ var reload = browsersync.reload;
 var path = {
   src: {
     scripts: 'src/js/*.js',
-    styles: 'src/less/main.less',
+    styles: 'src/less/style.less',
     images: 'src/img/*.*'
   },
   dist: {
@@ -25,7 +27,7 @@ var path = {
   watch: {
     html: '**/*.html',
     scripts: 'src/js/**/*.js',
-    styles: 'src/less/*.less',
+    styles: 'src/less/**/*.less',
     images: 'src/img/*.*'
   },
   root: __dirname
@@ -41,6 +43,9 @@ gulp.task('copy:images', function() {
 gulp.task('styles', function() {
   return gulp.src(path.src.styles)
     .pipe(less())
+    .pipe(postcss([
+      lost()
+    ]))
     .pipe(autoprefixer({
       browsers: [
         'last 2 versions',
@@ -51,7 +56,7 @@ gulp.task('styles', function() {
     }))
     .pipe(csso())
     .pipe(rename({
-      basename: 'styles'
+      basename: 'style'
     }))
     .pipe(gulp.dest(path.dist.styles));
 });
